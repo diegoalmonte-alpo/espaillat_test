@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_purchased_good_service,access.purchased.good.service,model_purchased_good_service,account.group_account_user,1,1,1,1
+access_account_tax_category,access.account.tax.category,model_account_tax_category,account.group_account_user,1,1,1,1
+access_account_invoice_report_service,access.account.invoice.report.service,model_account_invoice_report_service,account.group_account_user,1,1,1,1

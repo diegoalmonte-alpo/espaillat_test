@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="account_move_inherit_form">
+            <field name="name">account.move.form</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='journal_div']" position="after">
+                    <field name="ncf_no" required="1"/>
+                    <field name="tipo" required="1"/>
+                    <!--<field name="type_good_services_id" widget="selection"/> -->
+                    <field name="ncf_doc_modification" invisible="1" />
+                    <field name="tipo_id" invisible="1"/>
+                    <field name="receipt_year" invisible="1"/>
+                    <field name="receipt_date" invisible="1"/>
+                    <field name="pay_year" invisible="1"/>
+                    <field name="pay_date" invisible="1"/>
+                    <field name="billed_tax" invisible="1"/>
+                    <field name="withheld_tax" invisible="1"/>
+                    <field name="retention_tax" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+
+       <record id="account_invoice_tree_report" model="ir.ui.view">
+            <field name="name">account.invoice.tree.report</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_invoice_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='ref']" position="after">
+                        <field name="ncf_no"/>
+                        <field name="tipo"/>
+                </xpath>
+            </field>
+       </record>
+    </data>
+</odoo>
